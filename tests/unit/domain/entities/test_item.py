@@ -7,7 +7,7 @@ from src.domain.entities.item import Item
 
 @pytest.fixture
 def item():
-    return Item(name="Test Item", description="This is a test item")
+    return Item(name='Test Item', description='This is a test item')
 
 
 def test_item_creation(item):
@@ -17,6 +17,6 @@ def test_item_creation(item):
     # Nenhuma ação necessária, pois estamos testando a criação
 
     # Assert
-    assert item.name == "Test Item"
-    assert item.description == "This is a test item"
+    assert item.name == 'Test Item'
+    assert item.description == 'This is a test item'
     assert isinstance(item.id, UUID)
