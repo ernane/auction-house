@@ -55,3 +55,16 @@ async def test_bid_price_lower_than_start_price(
     bid = create_bid(auction_id=auction.id, price_value=9)
     with pytest.raises(LowBidError):
         await submit_bid_use_case(bid)
+
+
+async def test_bid_successfully_added(
+    auctions_repository: InMemoryAuctionRepository,
+    submit_bid_use_case: SubmitBidUseCase,
+):
+    auction = create_auction()
+    auctions_repository.auctions.append(auction)
+    bid = create_bid(auction_id=auction.id)
+    await submit_bid_use_case(bid)
+    result = await auctions_repository.get(id=auction.id)
+    assert result is not None
+    assert bid in result.bids
