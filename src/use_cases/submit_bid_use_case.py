@@ -3,6 +3,7 @@ from src.ports.repositories.auction_repository import AuctionRepository
 from src.use_cases.exceptions import (
     AuctionNotActiveError,
     AuctionNotFoundError,
+    LowBidError,
 )
 
 
@@ -16,3 +17,6 @@ class SubmitBidUseCase:
             raise AuctionNotFoundError(bid.auction_id)
         if not auction.is_active:
             raise AuctionNotActiveError(auction.id)
+        if bid.price.value <= auction.minimal_bid_price.value:
+            raise LowBidError(auction.minimal_bid_price)
+        await self._auction_repository.add_bid(bid)

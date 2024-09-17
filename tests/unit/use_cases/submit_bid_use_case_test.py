@@ -10,6 +10,7 @@ from src.ports.repositories.auction_repository import AuctionRepository
 from src.use_cases.exceptions import (
     AuctionNotActiveError,
     AuctionNotFoundError,
+    LowBidError,
 )
 from src.use_cases.submit_bid_use_case import SubmitBidUseCase
 from tests.utils import create_auction, create_bid
@@ -42,4 +43,15 @@ async def test_auction_not_active(
     auctions_repository.auctions.append(auction)
     bid = create_bid(auction_id=auction.id)
     with pytest.raises(AuctionNotActiveError):
+        await submit_bid_use_case(bid)
+
+
+async def test_bid_price_lower_than_start_price(
+    auctions_repository: InMemoryAuctionRepository,
+    submit_bid_use_case: SubmitBidUseCase,
+):
+    auction = create_auction(start_price_value=10)
+    auctions_repository.auctions.append(auction)
+    bid = create_bid(auction_id=auction.id, price_value=9)
+    with pytest.raises(LowBidError):
         await submit_bid_use_case(bid)
