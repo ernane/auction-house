@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/ernane/auction-house/compare/v1.2.0...v1.3.0) (2024-09-18)
+
+
+### Features
+
+* add engine dependency 3.5.1 ([97cfc1c](https://github.com/ernane/auction-house/commit/97cfc1c1d014f4fdeb49264b4c60d919ccdd07ed))
+* Add MongoDB auction repository and exceptions ([600572c](https://github.com/ernane/auction-house/commit/600572ce86917082cd2856d36240e890dfd07744))
+* Add MongoDB service for testing ([dee4d35](https://github.com/ernane/auction-house/commit/dee4d359c258136e3c1fcf42ac043332ef2ae2a7))
+* Add test fixtures for MongoDB auction repository ([998d5b5](https://github.com/ernane/auction-house/commit/998d5b5ee5771016a9799d174c1425c7c39ff93f))
+
 # [1.2.0](https://github.com/ernane/auction-house/compare/v1.1.0...v1.2.0) (2024-09-17)
 
 
