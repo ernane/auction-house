@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/ernane/auction-house/compare/v1.3.0...v1.4.0) (2024-09-20)
+
+
+### Features
+
+* Add FastAPI, Uvicorn, and HTTPX dependencies ([177555b](https://github.com/ernane/auction-house/commit/177555bd4de2b9c27217a30eba6e4e28b4b58eb7))
+* Add integration tests for submitting bids in auctions ([743d217](https://github.com/ernane/auction-house/commit/743d217c2460cf61702d6e8652d3130ea5577218))
+* Add REST API router for submitting bids in auctions ([99cab54](https://github.com/ernane/auction-house/commit/99cab54c4e19f43e2f5e7dec6797630da7b5aba2))
+* Add REST API router for submitting bids in auctions ([2332ce9](https://github.com/ernane/auction-house/commit/2332ce9c8501c80f977e89e5611a7730989f1143))
+* Add schema router for REST API ([b855fbd](https://github.com/ernane/auction-house/commit/b855fbda71dfb82dbb5b40dc1287af16e3ed6c97))
+* Adicionar roteador REST para enviar lances em leilões ([ef7d2e0](https://github.com/ernane/auction-house/commit/ef7d2e0fa26cd02106b0e774b8e189a8049b5382))
+
 # [1.3.0](https://github.com/ernane/auction-house/compare/v1.2.0...v1.3.0) (2024-09-18)
 
 
